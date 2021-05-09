@@ -1,7 +1,7 @@
 <template>
   <view class="home">
-	  <image class="banner" src="../../static/banner2.png" />
-	 <!-- <view class="banner" :style="{ backgroundImage: `url(${banner})` }"></view> -->
+    <image class="banner" src="../../static/banner2.png" />
+    <!-- <view class="banner" :style="{ backgroundImage: `url(${banner})` }"></view> -->
     <uni-grid :column="3" :showBorder="false" borderColor="#000" class="list">
       <uni-grid-item class="grid-item" v-for="item in list" :key="item.name">
         <view class="item " @click="goAppPage(item.router)">
@@ -53,6 +53,11 @@ export default {
           router: "",
         },
         {
+          icon: "icon-3d",
+          name: "变身3D动漫",
+          router: "",
+        },
+        {
           icon: "icon-shuiyin",
           name: "去水印",
           router: "",
@@ -79,14 +84,14 @@ export default {
         },
         {
           icon: "icon-shengdan",
-          name: "俺要圣诞帽",
+          name: "来顶圣诞帽",
           router: "",
         },
       ],
       type: "center",
       msgType: "success",
       message: "",
-	  banner: '../../static/banner2.jpg'
+      banner: "../../static/banner2.jpg",
     };
   },
   methods: {
@@ -105,17 +110,17 @@ export default {
 </script>
 
 <style lang="scss">
-.banner{
-	width: 100%;
-	height:210rpx;
-// 	background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center;
+.banner {
+  width: 100%;
+  height: 210rpx;
+  // 	background-size: contain;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
 }
 .list {
-	.grid-item{
-		height:94px;
-	}
+  .grid-item {
+    height: 94px;
+  }
   .item {
     position: relative;
     width: 100%;
