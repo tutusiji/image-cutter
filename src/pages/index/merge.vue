@@ -26,9 +26,11 @@
   </view>
 </template>
 <script>
+import merge from '../mixins/merge'
 // import { uniGrid } from "@dcloudio/uni-ui";
 //import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue' //也可使用此方式引入组件
 export default {
+  mixins: [merge],
   data() {
     return {
       list: [],
@@ -37,6 +39,7 @@ export default {
   // components: { uniGrid },
   mounted() {
     this.ctx();
+    this.init()
   },
   methods: {
     chooseImg() {
