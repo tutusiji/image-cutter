@@ -53,7 +53,7 @@ export default {
           router: "",
         },
         {
-          icon: "icon-3d",
+          icon: "icon-3d1",
           name: "变身3D动漫",
           router: "",
         },
