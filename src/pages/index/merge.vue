@@ -34,6 +34,7 @@
         <scroll-view
           :scroll-top="scrollTop"
           scroll-y="true"
+          show-scrollbar="false"
           class="scroll-Y"
           @scroll="scroll"
           ><image
@@ -41,8 +42,8 @@
             :src="showUrl"
             @click="showBigPhoto"
             :style="{
-              width: `${showPhoto.width * 0.5}px`,
-              height: `${showPhoto.height * 0.5}px`,
+              width: `${showPhoto.width * 0.27}px`,
+              height: `${showPhoto.height * 0.27}px`,
             }"
           />
         </scroll-view>
@@ -67,7 +68,7 @@
       <view class="tool">
         <view class="save" @click="save"> 保存 </view>
         <view class="cut" @click="cutShow = true"> 裁剪 </view>
-        <view class="cut" @click="cutShow = true"> 裁剪 </view>
+        <!-- <view class="cut" @click="cutShow = true"> 裁剪 </view> -->
       </view>
     </view>
   </view>
@@ -78,15 +79,27 @@ import merge from "../mixins/merge";
 // import { uniGrid } from "@dcloudio/uni-ui";
 //import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue' //也可使用此方式引入组件
 export default {
+  onShareAppMessage() {
+    return {
+      title: "图片处理小程序",
+      path: "/pages/index/index",
+    };
+  },
+  onShareTimeline() {
+    return {
+      title: "图片处理小程序",
+      path: "/pages/index/index",
+    };
+  },
   mixins: [merge],
   data() {
     return {
       list: [],
-      cvsWidth: 545,
+      cvsWidth: 1120,
       cvsHeight: 0,
       showUrl: "",
       showPhoto: null,
-      display: true,
+      display: false,
       cutShow: false,
       y: 200,
       topY: 0,
@@ -241,6 +254,10 @@ export default {
         filePath: this.showUrl,
         success: function() {
           console.log("save success");
+          uni.showToast({
+            title: "保存成功",
+            duration: 1500,
+          });
         },
       });
     },
@@ -348,7 +365,7 @@ export default {
   border-top: 1px solid #000;
   position: relative;
   margin: 10px 0 0 10px;
-  width: 87vw;
+  width: 90vw;
   height: 79vh;
   //   border: 1px dashed #fff;
   background-color: rgba(255, 255, 255, 0.95);
@@ -386,10 +403,11 @@ export default {
     right: 0;
     width: 100%;
     border-top: 2px dashed #000;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   }
 }
 .scroll-Y {
-  margin: 10px 0 0 10px;
+  margin: 8px 0 0 7px;
   width: 86vw;
   border: 1px dashed #000;
   height: 76vh;
@@ -411,7 +429,7 @@ export default {
 }
 .close {
   position: absolute;
-  right: -6px;
+  right: -7px;
   top: 10px;
   width: 30px;
   height: 30px;

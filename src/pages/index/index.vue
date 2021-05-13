@@ -21,6 +21,18 @@
 import { uniGrid } from "@dcloudio/uni-ui";
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: "图片处理小程序",
+      path: "/pages/index/index",
+    };
+  },
+  onShareTimeline() {
+    return {
+      title: "图片处理小程序",
+      path: "/pages/index/index",
+    };
+  },
   components: {
     uniGrid,
   },
