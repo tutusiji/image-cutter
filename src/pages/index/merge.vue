@@ -40,8 +40,7 @@
           show-scrollbar="false"
           class="scroll-Y"
           @scroll="scroll"
-        >
-          <image
+          ><image
             class="showImg"
             :src="showUrl"
             @click="showBigPhoto"
@@ -61,8 +60,7 @@
             height: `${cutterVal}px`,
           }"
           @scroll="scroll"
-        >
-          <image
+          ><image
             class="showImg"
             :src="showUrl"
             @click="showBigPhoto"
@@ -83,8 +81,7 @@
             top: `${cutterVal}px`,
           }"
           @scroll="scroll"
-        >
-          <image
+          ><image
             class="showImg"
             :src="showUrl"
             @click="showBigPhoto"
@@ -124,8 +121,8 @@
         </movable-area>
       </div>
       <view class="close" @click="display = false">
-        <image class="img" src="../../static/close1.svg" />
-      </view>
+        <image class="img" src="../../static/close1.svg"
+      /></view>
       <view class="tool">
         <view class="mod-btn" @click="save" v-if="!cutShow"> 保存 </view>
         <view class="mod-btn" @click="cutShow = true" v-if="!cutShow">
@@ -378,12 +375,10 @@ export default {
 .footer {
   width: 100vw;
   display: flex;
-
   .combine {
     margin-left: 20px;
   }
 }
-
 .tool {
   padding: 10px;
   box-sizing: border-box;
@@ -403,7 +398,6 @@ export default {
     margin-right: 10px;
     font-size: 14px;
   }
-
   .desc {
     margin-left: 10px;
     font-size: 10px;
@@ -422,12 +416,10 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-
   .img {
     width: 30px;
     height: 30px;
   }
-
   &:active {
     background-color: #bebebe;
   }
@@ -439,7 +431,6 @@ export default {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
 .item {
   position: relative;
   display: inline-block;
@@ -452,7 +443,6 @@ export default {
   background-position: center;
   border: 1px solid #000;
   background-color: #fff;
-
   .num {
     position: absolute;
     top: -15px;
@@ -460,7 +450,6 @@ export default {
     font-size: 10px;
   }
 }
-
 .myCanvas {
   position: absolute;
   left: 10000px;
@@ -472,19 +461,16 @@ export default {
   margin: 0 auto;
   border: 1px solid #000;
 }
-
 .showImg {
   display: block;
   width: 80%;
   margin: 0 auto;
 }
-
 .cvw {
   width: 0;
   height: 0;
   overflow: hidden;
 }
-
 .box {
   z-index: 10;
   position: fixed;
@@ -494,7 +480,6 @@ export default {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
 }
-
 .boxbd {
   position: relative;
   border-top: 1px solid #000;
@@ -506,7 +491,6 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
   overflow: hidden;
 }
-
 .cutter-area {
   position: absolute;
   top: 0;
@@ -515,18 +499,15 @@ export default {
   height: 100%;
   pointer-events: none;
 }
-
 .cutter-view {
   width: 100%;
   height: 20px;
   pointer-events: auto;
 }
-
 .cutter-scissor {
   width: 100%;
   height: 20px;
   position: relative;
-
   .img {
     position: absolute;
     right: -26px;
@@ -534,7 +515,6 @@ export default {
     width: 60px;
     height: 60px;
   }
-
   &:after {
     position: absolute;
     content: "";
@@ -546,12 +526,10 @@ export default {
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
   }
 }
-
 .cutter-hand {
   width: 60px;
   height: 20px;
   position: relative;
-
   .img {
     position: absolute;
     left: -12px;
@@ -561,7 +539,6 @@ export default {
     transform: rotate(40deg);
   }
 }
-
 .scroll-Y {
   margin: 8px 0 0 7px;
   width: 86vw;
@@ -580,25 +557,21 @@ export default {
   );
   background-size: 50px 50px;
 }
-
 .scroll-view-item_H {
   height: 500px;
 }
-
 .close {
   position: absolute;
   right: -7px;
   top: 10px;
   width: 30px;
   height: 30px;
-
   .img {
     width: 20px;
     height: 20px;
     color: #fff;
   }
 }
-
 .cvsTop {
   margin: 8px 0 0 0;
   position: absolute;
@@ -607,7 +580,6 @@ export default {
   width: 86vw;
   border: 1px solid #f00;
 }
-
 .cvsBot {
   margin: 8px 0 0 0;
   position: absolute;
